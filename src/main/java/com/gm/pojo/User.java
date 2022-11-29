@@ -8,7 +8,8 @@ import org.springframework.stereotype.Component;
  */
 @Data
 public class User {
-    private int id; // 唯一id
+    private int id; // 序号
+    private int uid; //学号 / 职工号
     private String username; // 账户
     private String password; // 密码
     private String role; // 角色

@@ -12,16 +12,11 @@
     <!-- 配置视图解析器 -->
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/page/"></property>
+        <property name="prefix" value="/login/"></property>
         <property name="suffix" value=".html"></property>
     </bean>
+    <!-- 这儿爆红是编译器的问题，不要改，改了跑不起来 -->
     <mvc:view-controller path="/" view-name="login-3"></mvc:view-controller>
-    <!--<mvc:default-servlet-handler/>-->
-    <mvc:resources mapping="/css/**" location="layuimini-2-onepage/css/"></mvc:resources>
-    <mvc:resources mapping="/lib/**" location="layuimini-2-onepage/lib/"></mvc:resources>
-    <mvc:resources mapping="/js/**" location="layuimini-2-onepage/js/"></mvc:resources>
-    <mvc:resources mapping="/images/**" location="layuimini-2-onepage/images/"></mvc:resources>
-    <mvc:resources mapping="/page/**" location="layuimini-2-onepage/page/"></mvc:resources>
-    <mvc:resources mapping="/**" location="layuimini-2-onepage/"></mvc:resources>
+    <mvc:resources mapping="/**" location="/pageFile/"></mvc:resources>
     <mvc:annotation-driven/>
 </beans>

@@ -7,8 +7,8 @@ import lombok.Data;
  */
 @Data
 public class Subject {
-    private int id; // 课程id
-    private String sub; // 课程名称
+    private int subject_id; // 课程id
+    private String subject; // 课程名称
     private String address; // 上课地点
     private String teacher; // 授课老师
     private String time; // 实验时间

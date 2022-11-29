@@ -1,0 +1,59 @@
+{
+  "homeInfo": {
+    "title": "首页",
+    "href": "page/welcome-3.html?t=3"
+  },
+  "logoInfo": {
+    "title": "LAYUI MINI",
+    "image": "images/logo.png",
+    "href": ""
+  },
+  "menuInfo": [
+    {
+      "title": "学生自主查询系统",
+      "icon": "fa fa-address-book",
+      "href": "",
+      "target": "_self",
+      "child": [
+        {
+          "title": "成绩查询",
+          "href": "page/scoreTable.html",
+          "icon": "fa fa-search",
+          "target": "_self"
+        },
+        {
+          "title": "选课系统",
+          "href": "",
+          "icon": "fa fa-star",
+          "target": "_self",
+          "child": [
+            {
+              "title": "选课",
+              "href": "page/chooseSubMenu.html",
+              "icon": "fa fa-plus",
+              "target": "_self"
+            },
+            {
+              "title": "退选",
+              "href": "page/reChooseSubMenu.html",
+              "icon": "fa fa-minus",
+              "target": "_self"
+            },
+            {
+              "title": "我的选课",
+              "href": "page/myChooseSubMenu.html",
+              "icon": "fa fa-heart",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "教师名单",
+          "href": "page/teacherTable.html",
+          "icon": "fa fa-group",
+          "target": "_self"
+        }
+      ]
+    }
+  ]
+}

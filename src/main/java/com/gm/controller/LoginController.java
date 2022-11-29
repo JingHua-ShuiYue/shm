@@ -28,8 +28,9 @@ public class LoginController {
             return R.error("您输入的账号或者密码错误");
         } else {
             request.getSession().setAttribute("username", user.getUsername());
-            log.info("用户 {}({}) 于 {} 登录成功", user.getUsername(), user.getRole(), getTime());
-            return R.success(getTime() + " " + user.getUsername() + " 登录成功");
+            log.info("用户 {}({}) 于 {} 登录成功", userInfo.getUsername(), user.getRole(), getTime());
+            new R<String>().setRole(userInfo.getRole());
+            return R.success(getTime() + " " + userInfo.getUsername() + " 登录成功");
         }
     }
 

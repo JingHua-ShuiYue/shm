@@ -1,5 +1,6 @@
 package com.gm.dao;
 
+import com.gm.pojo.Student;
 import com.gm.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -27,4 +28,6 @@ public interface UserDao {
     List<User> selectUsers(String role);
 
     User selectUserByUsername(String username);
+
+    Student getStudentInfoByUser(User user);
 }

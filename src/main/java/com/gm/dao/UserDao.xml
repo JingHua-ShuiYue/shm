@@ -22,6 +22,9 @@
     <select id="selectUserByUsername" resultType="com.gm.pojo.User">
         select * from user where username=#{username}
     </select>
+    <select id="getStudentInfoByUser" resultType="com.gm.pojo.Student">
+        select * from user where username=
+    </select>
 
 
 </mapper>
