@@ -28,7 +28,8 @@ public class LoginController {
             return R.error("您输入的账号或者密码错误");
         } else {
             request.getSession().setAttribute("username", user.getUsername());
-            log.info("用户 {}({}) 于 {} 登录成功", userInfo.getUsername(), user.getRole(), getTime());
+            request.getSession().setAttribute("role", userInfo.getRole());
+            log.info("用户 {}({}) 于 {} 登录成功", userInfo.getUsername(), userInfo.getRole(), getTime());
             new R<String>().setRole(userInfo.getRole());
             return R.success(getTime() + " " + userInfo.getUsername() + " 登录成功");
         }
@@ -38,12 +39,14 @@ public class LoginController {
     @ResponseBody
     public R<String> logout(HttpServletRequest request) {
         String username = (String) request.getSession().getAttribute("username");
+        String role = (String) request.getSession().getAttribute("role");
         if (null == username) {
-            log.info("用户 {} 于 {} 登录成功", "null(未登录)", getTime());
+            log.info("用户 {}({}) 于 {} 退出成功", "null", role, getTime());
             return R.success("退出成功，虽然您未登录");
         } else {
             request.getSession().removeAttribute("username");
-            log.info("用户 {} 于 {} 登录成功", username, getTime());
+            request.getSession().removeAttribute("role");
+            log.info("用户 {}({}) 于 {} 退出成功", username, role, getTime());
             return R.success(getTime() + " " + username + " 退出成功");
         }
     }

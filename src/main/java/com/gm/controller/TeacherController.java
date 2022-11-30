@@ -28,7 +28,7 @@ public class TeacherController {
      *
      * @return
      */
-    @GetMapping("/teacher/")
+    @GetMapping("/teacher/1")
     public R teacherGetSelfInfo() {
         return null;
     }
@@ -38,7 +38,7 @@ public class TeacherController {
      *
      * @return
      */
-    @GetMapping("/teacher/")
+    @GetMapping("/teacher/2")
     public R teacherAlterSelfPassword() {
         return null;
     }
@@ -48,7 +48,7 @@ public class TeacherController {
      *
      * @return
      */
-    @GetMapping("/teacher/")
+    @GetMapping("/teacher/3")
     public R teacherAlterSelfInfo() {
         return null;
     }
@@ -58,7 +58,7 @@ public class TeacherController {
      *
      * @return
      */
-    @GetMapping("/teacher/")
+    @GetMapping("/teacher/4")
     public R teacherGetUsers() {
         return null;
     }
@@ -68,7 +68,7 @@ public class TeacherController {
      *
      * @return
      */
-    @GetMapping("/teacher/")
+    @GetMapping("/teacher/5")
     public R teacherSetScore() {
         return null;
     }
@@ -78,7 +78,7 @@ public class TeacherController {
      *
      * @return
      */
-    @GetMapping("/teacher/")
+    @GetMapping("/teacher/6")
     public R teacherGetSubjectInfo() {
         return null;
     }
@@ -88,7 +88,7 @@ public class TeacherController {
      *
      * @return
      */
-    @GetMapping("/teacher/")
+    @GetMapping("/teacher/7")
     public R teacherGetStudentByScore() {
         return null;
     }
@@ -98,7 +98,7 @@ public class TeacherController {
      *
      * @return
      */
-    @GetMapping("/teacher/")
+    @GetMapping("/teacher/8")
     public R teacherGetStudentByStudentName() {
         return null;
     }
@@ -108,7 +108,7 @@ public class TeacherController {
      *
      * @return
      */
-    @GetMapping("/teacher/")
+    @GetMapping("/teacher/9")
     public R teacherGetStudentByUid() {
         return null;
     }

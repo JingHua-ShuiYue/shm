@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<center>
+    <br><br><br><br><br><br><br><br><br>
+    <h1>登录</h1>
+    <form>
+        用户:<input id="username" type="text"><br>
+        密码:<input id="password" type="password"><br>
+        <input id="submit" type="button" value="登录">
+        <input type="reset" value="清空">
+        <script type="text/javascript">
+            $("#submit").on("click", function () {
+                $.ajax({
+                    async: true,
+                    type: "POST",
+                    url: "/login",
+                    contentType: "application/json;charset=utf-8",
+                    data: JSON.stringify({"username": $("#username").val(), "password": $("#password").val()}),
+                    success: function (result) {
+                        console.log(result)
+                        window.location.href = "/test/home.html"
+                    },
+                    error: function (result) {
+
+                    }
+                })
+
+            })
+        </script>
+    </form>
+</center>
+</body>
+</html>

@@ -21,13 +21,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int addStudent(User user) {
-        int i = userDao.insertStudent(user);
+        int i = userDao.insert(user);
         return i;
     }
 
     @Override
     public int addTeacher(User user, String role) {
-        int i = userDao.insertTeacher(user, role);
+        int i = userDao.insert(user);
         return i;
     }
 
@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public List<User> getUsersByRole(String role) {
-        List<User> users = userDao.selectUsers(role);
+        List<User> users = userDao.selectAllByRole(role);
         return users;
     }
 

@@ -3,6 +3,26 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gm.dao.SubjectDao">
-
+    <select id="selectAll" resultType="com.gm.pojo.Subject">
+        select * from subject
+    </select>
+    <select id="selectById" resultType="com.gm.pojo.Subject">
+        select * from subject where subject_id=#{id}
+    </select>
+    <select id="selectBySubject" resultType="com.gm.pojo.Subject">
+        select * from subject where subject=#{subject}
+    </select>
+    <select id="selectByTeacher" resultType="com.gm.pojo.Subject">
+        select * from subject where teacher=#{teacherName}
+    </select>
+    <insert id="insertSubject">
+        insert into subject(subject_id, subject, address, teacher, time, num) values (#{subject_id}, #{subject}, #{address}, #{teacher}, #{time}, #{num})
+    </insert>
+    <update id="updateSubject">
+        update subject set subject=#{subject},address=#{address},teacher=#{teacher},time=#{time},num=#{num} where subject_id=#{subject_id}
+    </update>
+    <delete id="deleteSubjectById">
+        delete from subject where subject_id=#{id}
+    </delete>
 
 </mapper>

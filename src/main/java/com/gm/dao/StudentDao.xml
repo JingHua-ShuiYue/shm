@@ -4,5 +4,26 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gm.dao.StudentDao">
 
+    <select id="select" resultType="com.gm.pojo.Student">
+        select * from student
+    </select>
+    <select id="selectByUid" resultType="com.gm.pojo.Student">
+        select * from student where uid=#{uid}
+    </select>
+    <select id="selectByName" resultType="com.gm.pojo.Student">
+        select * from student where student_name=#{student_name}
+    </select>
+    <update id="updateSubject">
+        update student set
+        <if test="student_sub = null and student_sub =''">
+            student_sub=NULL where uid=#{uid};
+        </if>
+        <if test="student_sub != null and student_sub !=''">
+            student_sub=#{subject} where uid=#{uid};
+        </if>
+    </update>
+    <delete id="deleteSubject">
+        delete from student where uid=#{uid}
+    </delete>
 
 </mapper>

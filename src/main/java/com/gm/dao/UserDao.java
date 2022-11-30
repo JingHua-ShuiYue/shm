@@ -12,10 +12,7 @@ public interface UserDao {
     User selectUser(User user);
 
     //注册学生账户
-    int insertStudent(User user);
-
-    //注册老师账户
-    int insertTeacher(User user, String role);
+    int insert(User user);
 
     /**
      * 删除用户
@@ -25,9 +22,11 @@ public interface UserDao {
      */
     int delUser(int id, String role);
 
-    List<User> selectUsers(String role);
+    int update(User user);
+
+    List<User> selectAllByRole(String role);
 
     User selectUserByUsername(String username);
 
-    Student getStudentInfoByUser(User user);
+    User selectUserByUid(int uid);
 }

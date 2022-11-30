@@ -3,6 +3,27 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gm.dao.TeacherDao">
-
+    <select id="selectAll" resultType="com.gm.pojo.Teacher">
+        select * from teacher;
+    </select>
+    <select id="selectByUid" resultType="com.gm.pojo.Teacher">
+        select * from teacher where uid=#{uid}
+    </select>
+    <select id="selectByName" resultType="com.gm.pojo.Teacher">
+        select * from teacher where teacher_name=#{teacher_name}
+    </select>
+    <select id="selectBySubject" resultType="com.gm.pojo.Teacher">
+        select * from teacher where teacher_subject=#{teacher_subject}
+    </select>
+    <insert id="insert">
+        insert into teacher(uid, teacher_name, teacher_sex, teacher_age, teacher_subject, teacher_phone)
+        values (#{uid},#{teacher_name},#{teacher_sex},#{teacher_age},#{teacher_subject},#{teacher_phone})
+    </insert>
+    <delete id="delete">
+        delete from teacher where uid=#{uid}
+    </delete>
+    <update id="update">
+        update teacher set teacher_name=#{teacher_name}, teacher_sex=#{teacher_sex}, teacher_age=#{teacher_age}, teacher_subject=#{teacher_subject}, teacher_phone=#{teacher_phone} where uid=#{uid}
+    </update>
 
 </mapper>
