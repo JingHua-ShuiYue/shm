@@ -32,14 +32,12 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public R chooseSubject(String subject, int uid) {
         Subject subject1 = subjectDao.selectBySubject(subject);
-        System.out.println(subject1);
         int num = subject1.getNum();
         if (num <= 0) {
             return R.error("课程已被选光");
         }
         --num;
         subject1.setNum(num);
-        System.out.println(subject1);
         int i = subjectDao.updateSubject(subject1);
         int i1 = studentDao.updateSubject(subject, uid);
         if (i == 0 || i1 == 0) {
@@ -61,7 +59,6 @@ public class StudentServiceImpl implements StudentService {
         Subject subject1 = subjectDao.selectBySubject(subject);
         subject1.setNum((subject1.getNum() + 1));
         int i1 = subjectDao.updateSubject(subject1);
-        System.out.println("------------------------------------------------>" + subject + "   " + uid);
         int i = studentDao.updateSubject("NULL", uid);
         if (i1 == 0 || i == 0) {
             return R.error("请重试");

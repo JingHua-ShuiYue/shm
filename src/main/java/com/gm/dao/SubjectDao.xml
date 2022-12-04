@@ -16,7 +16,7 @@
         select * from subject where teacher=#{teacherName}
     </select>
     <insert id="insertSubject">
-        insert into subject(subject_id, subject, address, teacher, time, num) values (#{subject_id}, #{subject}, #{address}, #{teacher}, #{time}, #{num})
+        insert into subject(subject_id, subject, address, teacher, time, num, class_hour) values (#{subject_id}, #{subject}, #{address}, #{teacher}, #{time}, #{num}, #{class_hour})
     </insert>
     <update id="updateSubject">
         update subject set subject=#{subject},address=#{address},teacher=#{teacher},time=#{time},num=#{num} where subject_id=#{subject_id}

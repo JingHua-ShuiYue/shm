@@ -13,4 +13,5 @@ public class Subject {
     private String teacher; // 授课老师
     private String time; // 实验时间
     private int num; // 剩余可选数量
+    private int class_hour;
 }
